@@ -3,7 +3,7 @@ This program rearranges the `#include ~` header files that appear in the middle 
 
 ## Installation
 ```
-git clone https://github.com/othneildrew/Best-README-Template
+git clone https://github.com/6f8l/sort-header-files
 ```
 
 ## Usage

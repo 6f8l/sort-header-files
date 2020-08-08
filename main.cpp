@@ -48,8 +48,35 @@ public:
 
   // sortHeaderFiles sorts the vector elements by rules.
   vector<Header_File_Line> sortHeaderFiles(vector<Header_File_Line> lines) {
-    // TODO
-    return lines;
+    vector<Header_File_Line> standard_lines;
+    vector<Header_File_Line> custom_lines;
+    vector<Header_File_Line> sorted_lines;
+
+    // Split lines into standard library lines & custom library lines.
+    for (int i = 0; i < lines.size(); i++) {
+      if (lines[i].getLine().find("#include \"") != 1) {
+        custom_lines.push_back(lines[i]);
+      } else if (lines[i].getLine().find("#include <") != 1) {
+        standard_lines.push_back(lines[i]);
+      } else {
+        cout << "ERROR: The target file contains an unacceptable header file"
+             << endl;
+      }
+    }
+
+    // Execute sort and add custom library lines to vector
+    sort(custom_lines.begin(), custom_lines.end(), sortByAlphabet);
+    for (int i = 0; i < custom_lines.size(); i++) {
+      sorted_lines.push_back(custom_lines[i]);
+    }
+
+    // Execute sort and add standard library lines to vector
+    sort(standard_lines.begin(), standard_lines.end(), sortByAlphabet);
+    for (int i = 0; i < standard_lines.size(); i++) {
+      sorted_lines.push_back(standard_lines[i]);
+    }
+
+    return sorted_lines;
   }
 
   // getSortedHeaderFiles returns vector that contains sorted header files.

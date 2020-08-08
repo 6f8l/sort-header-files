@@ -13,7 +13,14 @@ protected:
 public:
   void setLine(const string &newLine) { line = newLine; }
   string getLine() { return line; }
+  bool operator()(Header_File_Line &A, Header_File_Line &B) {
+    return A.getLine() < B.getLine();
+  }
 };
+
+bool sortByAlphabet(Header_File_Line &A, Header_File_Line &B) {
+  return (A.getLine() < B.getLine());
+}
 
 class File {
 protected:

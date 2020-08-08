@@ -16,7 +16,38 @@ In other words, it is a mechanism that sort is executed in the order of `#includ
 The example command is presented below.
 ```
 cd /path/to/this/repository
-g++ main.cpp <TARGET_FILE> -o main && ./main
+g++ main.cpp <TARGET_FILE> -o main
+./main sample.cpp
+```
+
+You can get `output.txt` as a result.
+
+### Output example
+If you execute this program specifying `sample.cpp` in this repository as an argument that contains below header files,
+```cpp
+// Randomly include standard and custom libraries
+#include <fstream>
+#include <sstream>
+#include <vector>
+
+// Custom header file
+#include "myclass.h"
+#include "a.h"
+
+#include <iostream>
+#include <string>
+```
+
+you can get `output.txt`.
+It has header files sorted in order shown below.
+```txt
+#include "a.h"
+#include "myclass.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 ```
 
 ## Development environment

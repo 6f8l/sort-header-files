@@ -16,7 +16,7 @@ In other words, it is a mechanism that sort is executed in the order of `#includ
 The example command is presented below.
 ```
 cd /path/to/this/repository
-g++ main.cpp <TARGET_FILE> -o main
+g++ main.cpp -o main
 ./main sample.cpp
 ```
 

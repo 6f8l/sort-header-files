@@ -4,23 +4,39 @@
 
 using namespace std;
 
-// TODO: Use an original class
-int sort(string filename) { return 0; }
+class File {
+protected:
+  string name;
+
+public:
+  void setName(const string &newName) { name = newName; }
+  string getName() { return name; }
+  void outputResult() {}
+};
+
+class Header_File {
+protected:
+  string name;
+
+public:
+  void setName(const string &newName) { name = newName; }
+  string getName() { return name; }
+};
 
 int main(int argc, char *argv[]) {
   int i;
-  string filename;
+  File file;
 
-  // Validate CLI arguments and substitute the filename.
+  // Validate CLI arguments and substitute the file name.
   if (argc != 2) {
-    cout << "FAILED: You need to specify one filename that you want to "
+    cout << "FAILED: You need to specify one file that you want to "
             "rearrange header files."
          << endl;
     return 0;
   } else {
-    filename = argv[1];
+    file.setName(argv[1]);
   }
 
-  cout << filename << endl;
+  cout << file.getName() << endl;
   return 0;
 }

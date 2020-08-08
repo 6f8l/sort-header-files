@@ -2,3 +2,6 @@
 
 # ignore binary file
 main
+
+# ignore output file
+*.txt

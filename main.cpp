@@ -6,6 +6,8 @@
 
 using namespace std;
 
+const string OUTPUT_FILE_NAME = "output.txt";
+
 class Header_File_Line {
 private:
   string line;
@@ -30,7 +32,7 @@ public:
   // outputSortedFiles creates "output.txt" that contains sorted header files.
   void outputSortedFiles() {
     vector<Header_File_Line> hf_lines;
-    ofstream outfile("output.txt", ios_base::out);
+    ofstream outfile(OUTPUT_FILE_NAME, ios_base::out);
 
     hf_lines = getSortedHeaderFiles();
 

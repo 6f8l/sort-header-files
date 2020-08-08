@@ -1,8 +1,15 @@
 // 10th lecture task.
 
-#include <fstream>
-#include <iostream>
+// Randomly include standard and custom libraries
 #include <sstream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+
+// Custom header file
+#include "myclass.h"
+
+#include <iostream>
 #include <string>
 #include <vector>
 

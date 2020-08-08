@@ -7,7 +7,7 @@
 using namespace std;
 
 class Header_File_Line {
-protected:
+private:
   string line;
 
 public:
@@ -23,7 +23,7 @@ bool sortByAlphabet(Header_File_Line &A, Header_File_Line &B) {
 }
 
 class File {
-protected:
+private:
   string name;
 
 public:
